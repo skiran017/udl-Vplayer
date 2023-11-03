@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, GridItem } from '@chakra-ui/react';
+import Header from '../Header/Header';
 
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
       w={'full'}
     >
       <GridItem p={'12px 24px'} area={'header'}>
-        Header
+        <Header />
       </GridItem>
       <GridItem p={'12px 24px'} borderRight="1px solid #ccc" area={'nav'}>
         Nav
