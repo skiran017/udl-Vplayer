@@ -14,6 +14,9 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.34)(react@18.2.0)
+  arweave:
+    specifier: ^1.14.4
+    version: 1.14.4
   arweave-wallet-kit:
     specifier: ^1.0.3
     version: 1.0.3(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
@@ -41,6 +44,15 @@ dependencies:
   react-router-dom:
     specifier: ^6.18.0
     version: 6.18.0(react-dom@18.2.0)(react@18.2.0)
+  warp-contracts:
+    specifier: ^1.4.22
+    version: 1.4.22
+  warp-contracts-plugin-deploy:
+    specifier: ^1.0.10
+    version: 1.0.10(@solana/web3.js@1.87.3)(arweave@1.14.4)(typescript@5.2.2)(warp-arbundles@1.0.4)(warp-contracts@1.4.22)
+  warp-contracts-plugin-signature:
+    specifier: ^1.0.17
+    version: 1.0.17(warp-contracts@1.4.22)
   zustand:
     specifier: ^4.4.6
     version: 4.4.6(@types/react@18.2.34)(react@18.2.0)
@@ -64,12 +76,21 @@ devDependencies:
   eslint:
     specifier: ^8.45.0
     version: 8.52.0
+  eslint-plugin-check-file:
+    specifier: ^2.4.0
+    version: 2.6.2(eslint@8.52.0)
   eslint-plugin-react-hooks:
     specifier: ^4.6.0
     version: 4.6.0(eslint@8.52.0)
   eslint-plugin-react-refresh:
     specifier: ^0.4.3
     version: 0.4.4(eslint@8.52.0)
+  eslint-plugin-simple-import-sort:
+    specifier: ^10.0.0
+    version: 10.0.0(eslint@8.52.0)
+  prettier:
+    specifier: ^3.0.1
+    version: 3.0.3
   typescript:
     specifier: ^5.0.2
     version: 5.2.2
@@ -4522,6 +4543,7 @@ packages:
   /algo-msgpack-with-bigint@2.1.1:
     resolution: {integrity: sha512-F1tGh056XczEaEAqu7s+hlZUDWwOBT70Eq0lfMpBP2YguSQVyxRbprLq5rELXKQOyOaixTWYhMeMQMzP0U5FoQ==}
     engines: {node: '>= 10'}
+    requiresBuild: true
     dev: false
 
   /algosdk@1.24.1:
@@ -5883,6 +5905,7 @@ packages:
 
   /cross-fetch@3.1.8:
     resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
+    requiresBuild: true
     dependencies:
       node-fetch: 2.7.0
     transitivePeerDependencies:
@@ -6325,6 +6348,17 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
+  /eslint-plugin-check-file@2.6.2(eslint@8.52.0):
+    resolution: {integrity: sha512-z3Rur4JjOdNH0fia1IH7JQseo9NLuFVtw9j8P6z2c5XmXWemH7/qGpmMB8XbOt9bJBNpmPlNAGJty9b3EervPw==}
+    engines: {node: 14.x || >= 16}
+    peerDependencies:
+      eslint: '>=7.28.0'
+    dependencies:
+      eslint: 8.52.0
+      is-glob: 4.0.3
+      micromatch: 4.0.5
+    dev: true
+
   /eslint-plugin-react-hooks@4.6.0(eslint@8.52.0):
     resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
     engines: {node: '>=10'}
@@ -6338,6 +6372,14 @@ packages:
     resolution: {integrity: sha512-eD83+65e8YPVg6603Om2iCIwcQJf/y7++MWm4tACtEswFLYMwxwVWAfwN+e19f5Ad/FOyyNg9Dfi5lXhH3Y3rA==}
     peerDependencies:
       eslint: '>=7'
+    dependencies:
+      eslint: 8.52.0
+    dev: true
+
+  /eslint-plugin-simple-import-sort@10.0.0(eslint@8.52.0):
+    resolution: {integrity: sha512-AeTvO9UCMSNzIHRkg8S6c3RPy5YEwKWSQPx3DYghLedo2ZQxowPFLGDN1AZ2evfg6r6mjBSZSLxLFsWSu3acsw==}
+    peerDependencies:
+      eslint: '>=5.0.0'
     dependencies:
       eslint: 8.52.0
     dev: true
@@ -7019,6 +7061,7 @@ packages:
 
   /hi-base32@0.5.1:
     resolution: {integrity: sha512-EmBBpvdYh/4XxsnUybsPag6VikPYnN30td+vQk+GI3qpahVEG9+gTkG0aXVxTjBqQ5T6ijbWIu77O+C5WFWsnA==}
+    requiresBuild: true
     dev: false
 
   /hmac-drbg@1.0.1:
@@ -7411,6 +7454,7 @@ packages:
 
   /js-sha512@0.8.0:
     resolution: {integrity: sha512-PWsmefG6Jkodqt+ePTvBZCSMFgN7Clckjd0O7su3I0+BW2QWUTJNzjktHsztGLhncP2h8mcF9V9Y2Ha59pAViQ==}
+    requiresBuild: true
     dev: false
 
   /js-tokens@4.0.0:
@@ -7439,6 +7483,7 @@ packages:
 
   /json-bigint@1.0.0:
     resolution: {integrity: sha512-SiPv/8VpZuWbvLSMtTDU8hEfrZWg/mH/nV/b4o0CYbSxu1UIQPLdwKOCIyLQX+VIPO5vrLX3i8qtqFyhdPSUSQ==}
+    requiresBuild: true
     dependencies:
       bignumber.js: 9.1.2
     dev: false
@@ -8615,6 +8660,12 @@ packages:
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier@3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /prng-well1024a@1.0.1:
@@ -9965,6 +10016,7 @@ packages:
 
   /vlq@2.0.4:
     resolution: {integrity: sha512-aodjPa2wPQFkra1G8CzJBTHXhgk3EVSwxSWXNPr1fgdFLUb8kvLV1iEb6rFgasIsjP82HWI6dsb5Io26DDnasA==}
+    requiresBuild: true
     dev: false
 
   /vm-browserify@1.1.2:
@@ -10006,6 +10058,22 @@ packages:
       - supports-color
       - tedious
       - typescript
+      - utf-8-validate
+    dev: false
+
+  /warp-contracts-plugin-signature@1.0.17(warp-contracts@1.4.22):
+    resolution: {integrity: sha512-kITntHtkIKTIA1aRBldPU+UmABjGPAEWGhBFuEjhc6ucFba5Zh1P2/EuFVsnaTBAjopzJvR2RExNhGrZfMGikw==}
+    engines: {node: '>=16.5'}
+    peerDependencies:
+      warp-contracts: ^1.4.10
+    dependencies:
+      arbundles: 0.9.11
+      arweave: 1.14.4
+      warp-contracts: 1.4.22
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - encoding
       - utf-8-validate
     dev: false
 

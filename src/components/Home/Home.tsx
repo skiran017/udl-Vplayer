@@ -1,5 +1,5 @@
-import { Grid, GridItem } from '@chakra-ui/react';
-import Header from '../Header/Header';
+import { Grid, GridItem } from '@chakra-ui/react'
+import Header from '../Header/Header'
 
 function Home() {
   return (
@@ -25,7 +25,7 @@ function Home() {
         Footer
       </GridItem>
     </Grid>
-  );
+  )
 }
 
-export default Home;
+export default Home

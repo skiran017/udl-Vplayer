@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactPlayer from 'react-player';
-import { Flex } from '@chakra-ui/react';
+import React from 'react'
+import ReactPlayer from 'react-player'
+import { Flex } from '@chakra-ui/react'
 
 interface PlayerProps {
-  txId: string;
+  txId: string
 }
 
-const HOST_URL = 'https://www.arweave.net/';
+const HOST_URL = 'https://www.arweave.net/'
 
 function Vplayer({ txId }: PlayerProps) {
   // const txID = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs';
@@ -16,20 +16,16 @@ function Vplayer({ txId }: PlayerProps) {
         controls={true}
         light={true}
         playing={true}
-        url={
-          txId
-            ? `${HOST_URL}${txId}`
-            : 'https://www.youtube.com/watch?v=LXb3EKWsInQ'
-        }
+        url={txId ? `${HOST_URL}${txId}` : 'https://www.youtube.com/watch?v=LXb3EKWsInQ'}
         height={'580px'}
         width={'90%'}
         style={{
           border: '1px solid black',
-          borderRadius: '6px',
+          borderRadius: '6px'
         }}
       />
     </Flex>
-  );
+  )
 }
 
-export default Vplayer;
+export default Vplayer
