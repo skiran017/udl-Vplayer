@@ -111,26 +111,24 @@ function Header() {
             <AiOutlineSearch fontSize="1.4rem" />
           </InputRightElement>
         </InputGroup>
-        <Flex alignItems="center" justifyContent="space-evenly" w="20%">
-          <CustomButton
-            handleClick={connect}
-            title={
-              isConnected && userAddress ? userAddress.slice(0, 5) + '...' + userAddress?.slice(38, 42) : 'Connect'
-            }
-          />
-          {isConnected && userAddress && (
-            <Menu>
-              <MenuButton as={Button} rounded={'full'} variant={'link'} cursor={'pointer'} minW={0}>
-                <Avatar size={'sm'} src={'https://avatars.dicebear.com/api/male/username.svg'} />
-              </MenuButton>
-              <MenuList>
-                <MenuItem pointerEvents="none">Balance : {userBalance} AR</MenuItem>
-                <MenuDivider />
-                <MenuItem onClick={disconnect}>Logout</MenuItem>
-              </MenuList>
-            </Menu>
-          )}
-        </Flex>
+      </Flex>
+      <Flex alignItems="center" justifyContent="space-evenly" w="20%">
+        <CustomButton
+          handleClick={connect}
+          title={isConnected && userAddress ? userAddress.slice(0, 5) + '...' + userAddress?.slice(38, 42) : 'Connect'}
+        />
+        {isConnected && userAddress && (
+          <Menu>
+            <MenuButton as={Button} rounded={'full'} variant={'link'} cursor={'pointer'} minW={0}>
+              <Avatar size={'sm'} src={'https://avatars.dicebear.com/api/male/username.svg'} />
+            </MenuButton>
+            <MenuList>
+              <MenuItem pointerEvents="none">Balance : {userBalance} AR</MenuItem>
+              <MenuDivider />
+              <MenuItem onClick={disconnect}>Logout</MenuItem>
+            </MenuList>
+          </Menu>
+        )}
       </Flex>
     </Flex>
   )
