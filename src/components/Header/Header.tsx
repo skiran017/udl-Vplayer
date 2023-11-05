@@ -1,17 +1,6 @@
 import React from 'react'
-import {
-  Flex,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Text,
-  Menu,
-  MenuItem,
-  MenuButton,
-  Button,
-  MenuList
-} from '@chakra-ui/react'
-import { AiOutlineSearch, AiOutlineClose, AiOutlineDown } from 'react-icons/ai'
+import { Flex, Input, InputGroup, InputRightElement, Text, Select, chakra } from '@chakra-ui/react'
+import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
 import { MdOutlineSlowMotionVideo } from 'react-icons/md'
 import { ConnectButton } from 'arweave-wallet-kit'
 import { useGlobalStore } from '../../store/globalStore'
@@ -19,9 +8,26 @@ import { useGlobalStore } from '../../store/globalStore'
 function Header() {
   // const id = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs';
   const [searchInput, setSearchInput] = useGlobalStore((state) => [state.searchInput, state.setSearchInput])
+  const [renderer, setRenderer] = React.useState()
+
+  const rendererOptions = [
+    {
+      VPlayer: '/vplayer'
+    },
+    {
+      Youtube: '/youtube'
+    },
+    {
+      Others: '/others'
+    }
+  ]
 
   function handleSearch(evt: any) {
     setSearchInput(evt.target.value)
+  }
+
+  function selectRendererChange(e: any) {
+    setRenderer(e.target.value)
   }
 
   return (
@@ -64,19 +70,21 @@ function Header() {
             <AiOutlineSearch fontSize="1.4rem" />
           </InputRightElement>
         </InputGroup>
-        <Menu>
-          <MenuButton as={Button} rightIcon={<AiOutlineDown />} variant={'outline'} color="white " borderRadius="18px">
-            Choose Renderer
-          </MenuButton>
-          <MenuList fontWeight="semibold">
-            <MenuItem as="a" href="#">
-              VPlayer
-            </MenuItem>
-            <MenuItem as="a" href="#">
-              Others
-            </MenuItem>
-          </MenuList>
-        </Menu>
+        <Select
+          w="20%"
+          borderRadius={'16px'}
+          _focusVisible={{
+            borderColor: '#11999e'
+          }}
+          placeholder="Choose renderer"
+          onChange={(e) => selectRendererChange(e)}
+        >
+          {rendererOptions.map((renderer, idx) => (
+            <chakra.option value={Object.values(renderer)} key={idx}>
+              {Object.keys(renderer)}
+            </chakra.option>
+          ))}
+        </Select>
       </Flex>
       <ConnectButton accent="#11999e" />
     </Flex>
