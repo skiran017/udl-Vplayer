@@ -1,4 +1,4 @@
-import { Flex, Box, Text } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import { RiVideoUploadLine, RiHome3Line } from 'react-icons/ri'
 import CustomNavButton from './CustomNavButton'
 

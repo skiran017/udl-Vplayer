@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Flex,
   Input,
@@ -10,12 +11,18 @@ import {
   Button,
   MenuList
 } from '@chakra-ui/react'
-import { AiOutlineSearch, AiOutlineDown } from 'react-icons/ai'
+import { AiOutlineSearch, AiOutlineClose, AiOutlineDown } from 'react-icons/ai'
 import { MdOutlineSlowMotionVideo } from 'react-icons/md'
 import { ConnectButton } from 'arweave-wallet-kit'
+import { useGlobalStore } from '../../store/globalStore'
 
 function Header() {
   // const id = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs';
+  const [searchInput, setSearchInput] = useGlobalStore((state) => [state.searchInput, state.setSearchInput])
+
+  function handleSearch(evt: any) {
+    setSearchInput(evt.target.value)
+  }
 
   return (
     <Flex w="full" justifyContent="space-between" alignItems="center">
@@ -34,9 +41,27 @@ function Header() {
             _focusVisible={{
               borderColor: '#11999e'
             }}
+            onChange={handleSearch}
+            value={searchInput}
           />
-          <InputRightElement pointerEvents="none">
-            <AiOutlineSearch style={{ fontSize: '1.4rem' }} />
+          <InputRightElement
+            _hover={{
+              cursor: 'pointer',
+              background: 'whitesmoke',
+              borderRadius: '50%'
+            }}
+            mr="2rem"
+            display={!searchInput ? 'none' : undefined}
+            onClick={() => setSearchInput('')}
+          >
+            <AiOutlineClose fontSize="1.4rem" />
+          </InputRightElement>
+          <InputRightElement
+            _hover={{
+              cursor: 'pointer'
+            }}
+          >
+            <AiOutlineSearch fontSize="1.4rem" />
           </InputRightElement>
         </InputGroup>
         <Menu>
