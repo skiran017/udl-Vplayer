@@ -16,7 +16,8 @@ function Vplayer({ txId }: PlayerProps) {
         controls={true}
         light={true}
         playing={true}
-        url={txId ? `${HOST_URL}${txId}` : 'https://www.youtube.com/watch?v=LXb3EKWsInQ'}
+        // url={txId ? `${HOST_URL}${txId}` : 'https://www.youtube.com/watch?v=LXb3EKWsInQ'}
+        url={`${HOST_URL}${txId}`}
         height={'580px'}
         width={'90%'}
         style={{
