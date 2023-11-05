@@ -70,6 +70,9 @@ devDependencies:
   '@vitejs/plugin-react':
     specifier: ^4.0.3
     version: 4.1.1(vite@4.5.0)
+  arconnect:
+    specifier: ^1.0.3
+    version: 1.0.3
   eslint:
     specifier: ^8.45.0
     version: 8.52.0
@@ -3736,6 +3739,10 @@ packages:
     dependencies:
       arweave: 1.14.4
     dev: false
+
+  /arconnect@1.0.3:
+    resolution: {integrity: sha512-A4BTa1hl8SIbAMVUOsIiLwavmCvIMpbEFSem64klDBuBOMoIuEMUPxP5AoUfUxJZwUdL3NhNj584lCWUSGtdyA==}
+    dev: true
 
   /are-we-there-yet@2.0.0:
     resolution: {integrity: sha512-Ci/qENmwHnsYo9xKIcUJN5LeDKdJ6R1Z1j9V/J5wyq8nh/mYPEpIKJbBZXtZjG04HiK7zV/p6Vs9952MrMeUIw==}
