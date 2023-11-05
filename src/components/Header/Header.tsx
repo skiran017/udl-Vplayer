@@ -1,30 +1,15 @@
-import React from 'react'
-import { Flex, Input, InputGroup, InputRightElement, Text, Select, chakra } from '@chakra-ui/react'
+import { Flex, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react'
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
 import { MdOutlineSlowMotionVideo } from 'react-icons/md'
-import { ConnectButton } from 'arweave-wallet-kit'
 import { useGlobalStore } from '../../store/globalStore'
-import { useNavigate } from 'react-router-dom'
-import { rendererOptions } from '../../utils/helpers/constants'
 
 function Header() {
   // const id = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs';
   const [searchInput, setSearchInput] = useGlobalStore((state) => [state.searchInput, state.setSearchInput])
-  const [renderer, setRenderer] = React.useState('')
-
-  const navigate = useNavigate()
 
   function handleSearch(evt: any) {
     setSearchInput(evt.target.value)
   }
-
-  function selectRendererChange(e: any) {
-    setRenderer(e.target.value)
-  }
-
-  React.useEffect(() => {
-    navigate(renderer)
-  }, [renderer])
 
   return (
     <Flex w="full" justifyContent="space-between" alignItems="center">
@@ -66,23 +51,7 @@ function Header() {
             <AiOutlineSearch fontSize="1.4rem" />
           </InputRightElement>
         </InputGroup>
-        <Select
-          w="20%"
-          borderRadius={'16px'}
-          _focusVisible={{
-            borderColor: '#11999e'
-          }}
-          placeholder="Choose renderer"
-          onChange={(e) => selectRendererChange(e)}
-        >
-          {rendererOptions.map((renderer, idx) => (
-            <chakra.option value={Object.values(renderer)} key={idx}>
-              {Object.keys(renderer)}
-            </chakra.option>
-          ))}
-        </Select>
       </Flex>
-      <ConnectButton accent="#11999e" />
     </Flex>
   )
 }

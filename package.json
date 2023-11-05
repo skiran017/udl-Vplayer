@@ -14,7 +14,6 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "arweave": "^1.14.4",
-    "arweave-wallet-kit": "^1.0.3",
     "arweavekit": "^1.5.1",
     "formik": "^2.4.5",
     "framer-motion": "^10.16.4",

@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom'
-import { ArweaveWalletKit } from 'arweave-wallet-kit'
 import App from './App.tsx'
 import './index.css'
 
@@ -10,17 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ChakraProvider>
       <BrowserRouter>
-        <ArweaveWalletKit
-          config={{
-            permissions: ['ACCESS_ADDRESS', 'SIGN_TRANSACTION', 'ACCESS_PUBLIC_KEY', 'SIGNATURE', 'DISPATCH'],
-            ensurePermissions: true
-          }}
-          theme={{
-            displayTheme: 'light'
-          }}
-        >
-          <App />
-        </ArweaveWalletKit>
+        <App />
       </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>
