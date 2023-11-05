@@ -8,6 +8,7 @@ import { useGlobalStore } from '../../store/globalStore'
 function Home() {
   const location = useLocation()
   const searchInput = useGlobalStore((state) => state.searchInput)
+  const renderer = useGlobalStore((state) => state.renderer)
   return (
     <Grid
       templateAreas={`"header header"
@@ -25,8 +26,11 @@ function Home() {
         <Nav />
       </GridItem>
       <GridItem p={'16px 24px'} area={'main'}>
-        {location.pathname === '/vplayer' ? (
-          <Vplayer txId={searchInput} />
+        {renderer === 'vplayer' ? (
+          // <Vplayer txId={searchInput} />
+          <iframe
+            src={`https://arweave.net/YHzqe3I-ACGTg5JvcY-vk7hogYh0z3yWRKxx--dCEt0/?tx=IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs`}
+          ></iframe>
         ) : (
           <h1>Choose VPlayer Renderer to view the media</h1>
         )}

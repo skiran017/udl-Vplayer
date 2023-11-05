@@ -10,7 +10,7 @@ import { rendererOptions } from '../../utils/helpers/constants'
 function Header() {
   // const id = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs';
   const [searchInput, setSearchInput] = useGlobalStore((state) => [state.searchInput, state.setSearchInput])
-  const [renderer, setRenderer] = React.useState('')
+  const [renderer, setRenderer] = useGlobalStore((state) => [state.renderer, state.setRenderer])
 
   const navigate = useNavigate()
 
