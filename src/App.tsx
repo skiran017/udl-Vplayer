@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react'
-import Home from './components/Home/Home'
+import Home from './pages/Home/Home'
 
 function App() {
   return (

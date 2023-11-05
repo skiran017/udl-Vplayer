@@ -1,6 +1,6 @@
 import { Grid, GridItem } from '@chakra-ui/react'
-import Header from '../Header/Header'
-import Nav from '../Nav/Nav'
+import Header from '../../components/Header/Header'
+import Nav from '../../components/Nav/Nav'
 
 function Home() {
   return (

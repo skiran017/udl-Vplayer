@@ -4,23 +4,15 @@ import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
 import { MdOutlineSlowMotionVideo } from 'react-icons/md'
 import { ConnectButton } from 'arweave-wallet-kit'
 import { useGlobalStore } from '../../store/globalStore'
+import { useNavigate } from 'react-router-dom'
+import { rendererOptions } from '../../utils/helpers/constants'
 
 function Header() {
   // const id = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs';
   const [searchInput, setSearchInput] = useGlobalStore((state) => [state.searchInput, state.setSearchInput])
-  const [renderer, setRenderer] = React.useState()
+  const [renderer, setRenderer] = React.useState('')
 
-  const rendererOptions = [
-    {
-      VPlayer: '/vplayer'
-    },
-    {
-      Youtube: '/youtube'
-    },
-    {
-      Others: '/others'
-    }
-  ]
+  const navigate = useNavigate()
 
   function handleSearch(evt: any) {
     setSearchInput(evt.target.value)
@@ -29,6 +21,10 @@ function Header() {
   function selectRendererChange(e: any) {
     setRenderer(e.target.value)
   }
+
+  React.useEffect(() => {
+    navigate(renderer)
+  }, [renderer])
 
   return (
     <Flex w="full" justifyContent="space-between" alignItems="center">
