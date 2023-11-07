@@ -14,6 +14,9 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.34)(react@18.2.0)
+  '@permaweb/payments':
+    specifier: ^0.0.12
+    version: 0.0.12
   arweave:
     specifier: ^1.14.4
     version: 1.14.4
@@ -2697,6 +2700,14 @@ packages:
     dev: false
     optional: true
 
+  /@permaweb/payments@0.0.12:
+    resolution: {integrity: sha512-92numqPyk+sJVmoN7zNh2YD6tsAzJxDSldhRFeIBb8DsOCb9gZWQAyrs6iO++W6LS3TiXqhrAUCpH67Sn4KK0w==}
+    dependencies:
+      ar-gql: 1.2.4
+      hyper-async: 1.1.2
+      ramda: 0.29.1
+    dev: false
+
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
@@ -3603,6 +3614,11 @@ packages:
       tweetnacl: 1.0.3
     transitivePeerDependencies:
       - debug
+    dev: false
+
+  /ar-gql@1.2.4:
+    resolution: {integrity: sha512-ououP34tR8UFjfYDEooojxZhlvwsrr54/pRKTD1K9dq2REeuYgxpcwSlLEIsqkVESDobRm7DtzmrMQSrLiGuFw==}
+    engines: {node: '>=18.0.0'}
     dev: false
 
   /arbundles@0.10.0(arweave@1.14.4):
@@ -5918,6 +5934,10 @@ packages:
     resolution: {integrity: sha512-un3ZAcNQGI7RzaWGZzQDH47HETM4Wrj6z6E4TId8Yeq9w5ZKUVB1nrT2jwFheTUjEmqcgTjXDc959jum+ai1kQ==}
     dev: false
 
+  /hyper-async@1.1.2:
+    resolution: {integrity: sha512-cnpOgKa+5FZOaccTtjduac1FrZuSc38/ftCp3vYJdUMt+7c+uvGDKLDK4MTNK8D3aFjIeveVrPcSgUPvzZLopg==}
+    dev: false
+
   /iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -7488,6 +7508,10 @@ packages:
   /quick-lru@5.1.1:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
+    dev: false
+
+  /ramda@0.29.1:
+    resolution: {integrity: sha512-OfxIeWzd4xdUNxlWhgFazxsA/nl3mS4/jGZI5n00uWOoSSFRhC1b6gl6xvmzUamgmqELraWp0J/qqVlXYPDPyA==}
     dev: false
 
   /randombytes@2.1.0:

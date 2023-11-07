@@ -21,22 +21,28 @@ import { getUserBalanceInAR } from '../../lib/actions/arconnect'
 
 function Header() {
   // const id = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs';
+
   const [userAddress, setUserAddress] = React.useState<string>('')
   const [userBalance, setUserBalance] = React.useState<number | undefined>()
 
-  const [searchInput, setSearchInput, connect, disconnect] = useGlobalStore((state) => [
+  const [searchInput, setSearchInput, connect, disconnect, setActiveAddress] = useGlobalStore((state) => [
     state.searchInput,
     state.setSearchInput,
     state.connect,
-    state.disconnect
+    state.disconnect,
+    state.setActiveAddress
   ])
+  const setIsLoading = useGlobalStore((state) => state.setIsLoading)
 
   const [isConnected, setIsConnected] = useGlobalStore((state) => [state.isConnected, state.setIsConnected])
 
   async function getUserAddress() {
     try {
+      setIsLoading(true)
       const userActiveAddress = await window.arweaveWallet.getActiveAddress()
+      setActiveAddress(userActiveAddress)
       setUserAddress(userActiveAddress)
+      setIsLoading(false)
     } catch (error) {
       console.log(error)
     }
