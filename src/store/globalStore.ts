@@ -16,7 +16,7 @@ interface GlobalStore {
   disconnect: () => Promise<void>
 }
 
-export const useGlobalStore = create<GlobalStore>((set, get) => ({
+export const useGlobalStore = create<GlobalStore>((set) => ({
   searchInput: '',
   isConnected: false,
   isLoading: false,

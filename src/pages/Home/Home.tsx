@@ -1,6 +1,4 @@
-import { Flex, Grid, GridItem, Spinner } from '@chakra-ui/react'
-import Header from '../../components/Header/Header'
-import Nav from '../../components/Nav/Nav'
+import { Flex, Box, GridItem, Spinner } from '@chakra-ui/react'
 import Vplayer from '../../components/VideoPlayer/Vplayer'
 import { useGlobalStore } from '../../store/globalStore'
 
@@ -11,21 +9,7 @@ function Home() {
     state.isLoading
   ])
   return (
-    <Grid
-      templateAreas={`"header header"
-                  "nav main"
-                  "footer footer"`}
-      gridTemplateRows={'0.5fr 4fr 0.2fr'}
-      gridTemplateColumns={'0.6fr 4fr'}
-      h="100vh"
-      w={'full'}
-    >
-      <GridItem p={'16px 24px'} area={'header'}>
-        <Header />
-      </GridItem>
-      <GridItem p={'16px 24px'} borderRight="1px solid #ccc" area={'nav'}>
-        <Nav />
-      </GridItem>
+    <Box>
       <GridItem p={'16px 24px'} area={'main'}>
         {!isLoading ? (
           searchInput && tagData ? (
@@ -49,16 +33,7 @@ function Home() {
           </Flex>
         )}
       </GridItem>
-      <GridItem p={'2px 24px'} area={'footer'}>
-        <Flex justifyContent="center" alignItems="center">
-          Powered By{' '}
-          <span style={{ margin: '0 6px' }}>
-            <img src="https://www.arweave.org/favicon-183x183.png" width="20px" alt="ar-logo" />
-          </span>{' '}
-          ARWEAVE{' '}
-        </Flex>
-      </GridItem>
-    </Grid>
+    </Box>
   )
 }
 

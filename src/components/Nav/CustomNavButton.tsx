@@ -2,15 +2,16 @@ import { Button } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 
 interface NavButtonProps {
-  href: string
+  href?: string
   children: ReactNode
+  onClick: () => void
 }
 
-function CustomNavButton({ href, children, ...props }: NavButtonProps) {
+function CustomNavButton({ onClick, children, ...props }: NavButtonProps) {
   return (
     <Button
       as={'a'}
-      href={href}
+      onClick={onClick}
       w="full"
       justifyContent="space-evenly"
       alignItems="center"
@@ -24,8 +25,8 @@ function CustomNavButton({ href, children, ...props }: NavButtonProps) {
         background: '#F0F0F1',
         transform: 'translateY(2px)'
       }}
-      {...props}
       mb="1rem"
+      {...props}
     >
       {children}
     </Button>

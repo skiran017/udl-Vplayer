@@ -5,10 +5,10 @@ import { InjectedArweaveSigner } from 'warp-contracts-plugin-signature'
 import { WarpFactory } from 'warp-contracts'
 import { DeployPlugin } from 'warp-contracts-plugin-deploy'
 
-const HOST_GATEWAY = 'https://gw.warp.cc/sonar/gateway/v2/contract'
-const ID = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs'
+// const HOST_GATEWAY = 'https://gw.warp.cc/sonar/gateway/v2/contract'
+// const ID = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs'
 const DRE_U = 'https://dre-u.warp.cc/contract'
-const DRE_1 = 'https://dre-1.warp.cc/contract'
+// const DRE_1 = 'https://dre-1.warp.cc/contract'
 
 const warp = WarpFactory.forMainnet().use(new DeployPlugin())
 
@@ -53,7 +53,6 @@ export async function createPairOnUcm() {
   console.log({ res })
 }
 export async function allowPairOnUcm() {
-  const U = `KTzTXT_ANmF84fWEKHzWURD1LWd9QaFR9yfYUwH2Lxw`
   const UCM = `tfalT8Z-88riNtoXdF5ldaBtmsfcSmbMqWLh2DHJIbg`
   const ASSET = `rC_7IMP3wbeEMeht1PjMsCy7VltXTZBii5FBUAKOxrE`
 

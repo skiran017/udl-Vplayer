@@ -18,9 +18,13 @@ import { MdOutlineSlowMotionVideo } from 'react-icons/md'
 import { useGlobalStore } from '../../store/globalStore'
 import CustomButton from '../CustomButton/CustomButton'
 import { getUserBalanceInAR } from '../../lib/actions/arconnect'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function Header() {
   // const id = 'IL5nfhl96Tvhxq0GpV7opSbX88T2l5eFJDaNudORbDs';
+
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const [userAddress, setUserAddress] = React.useState<string>('')
   const [userBalance, setUserBalance] = React.useState<number | undefined>()
@@ -80,13 +84,15 @@ function Header() {
   return (
     <Flex w="full" justifyContent="space-between" alignItems="center">
       <Flex justifyContent="center" w="12%" alignItems="center">
-        <MdOutlineSlowMotionVideo style={{ fontSize: '1.8rem', color: '#11999e' }} />
-        <Text fontWeight={'bold'} fontSize="1.25rem" mx="6px">
-          VPlayer
-        </Text>
+        <Flex onClick={() => navigate('/')} _hover={{ cursor: 'pointer' }}>
+          <MdOutlineSlowMotionVideo style={{ fontSize: '1.8rem', color: '#11999e' }} />
+          <Text fontWeight={'bold'} fontSize="1.25rem" mx="6px">
+            VPlayer
+          </Text>
+        </Flex>
       </Flex>
       <Flex w="60%" justifyContent="space-evenly">
-        <InputGroup w="70%">
+        <InputGroup display={location.pathname !== '/' ? 'none' : undefined} w="70%">
           <Input
             type="text"
             placeholder="Search"
