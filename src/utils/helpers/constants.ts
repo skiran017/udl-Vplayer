@@ -1,2 +1,5 @@
 export const HOST_URL = 'https://www.arweave.net/'
 export const VPlayer_ID = 'YHzqe3I-ACGTg5JvcY-vk7hogYh0z3yWRKxx--dCEt0'
+export const DRE_U = 'https://dre-u.warp.cc/contract'
+export const U = 'KTzTXT_ANmF84fWEKHzWURD1LWd9QaFR9yfYUwH2Lxw'
+export const UCM = 'tfalT8Z-88riNtoXdF5ldaBtmsfcSmbMqWLh2DHJIbg'
