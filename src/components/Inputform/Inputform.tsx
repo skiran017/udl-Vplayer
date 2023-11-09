@@ -54,7 +54,7 @@ export default function Inputform() {
       description: '',
       videoTx: '',
       trailerTx: '',
-      renderer: '',
+      renderer: 'YHzqe3I-ACGTg5JvcY-vk7hogYh0z3yWRKxx--dCEt0',
       license: 'default',
       payment: '',
       tags: []
